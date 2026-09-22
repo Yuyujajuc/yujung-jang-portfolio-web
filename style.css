@@ -1,0 +1,923 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #000000;
+
+  font-family: "museo", serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.2;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+
+/* ==========================================
+   DESIGN VARIABLES
+========================================== */
+
+:root {
+  --page-width: 1440px;
+
+  --left-margin: 80px;
+  --left-grid-width: 290px;
+
+  --middle-space: 204px;
+
+  --right-grid-width: 806px;
+  --right-margin: 60px;
+
+  --left-column: 50px;
+  --left-gutter: 30px;
+
+  --right-column: 170px;
+  --right-gutter: 42px;
+
+  --guide-color: #dedede;
+  --guide-width: 2px;
+
+  /* reusable grids */
+
+  --page-grid:
+    var(--left-margin)
+    var(--left-grid-width)
+    var(--middle-space)
+    var(--right-grid-width)
+    var(--right-margin);
+
+  --left-grid:
+    repeat(4, var(--left-column));
+
+  --right-grid:
+    repeat(4, minmax(0, 1fr));
+}
+
+
+/* ==========================================
+   PAGE
+========================================== */
+
+.site {
+  position: relative;
+
+  width: 100%;
+  max-width: var(--page-width);
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  padding-top: 82px;
+  padding-bottom: 120px;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+  position: sticky;
+  top: 82px;
+
+  z-index: 20;
+
+  display: grid;
+  grid-template-columns: var(--page-grid);
+
+  align-items: baseline;
+}
+
+
+/* Yujung Jang */
+
+.logo {
+  grid-column: 2 / 4;
+
+  position: relative;
+  z-index: 2;
+
+  font-size: 60px;
+  line-height: 0.95;
+
+  font-weight: 500;
+  letter-spacing: 0;
+
+  white-space: nowrap;
+}
+
+
+/* About / Resume */
+
+.top-nav {
+  grid-column: 4;
+
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: var(--right-grid);
+  column-gap: var(--right-gutter);
+
+  align-items: baseline;
+
+  font-size: 20px;
+  line-height: 0.95;
+}
+
+.top-nav a:first-child {
+  grid-column: 3;
+}
+
+.top-nav a:last-child {
+  grid-column: 4;
+
+  justify-self: start;
+}
+
+
+/* ==========================================
+   HEADER ARROW
+========================================== */
+
+.header-guide {
+  position: absolute;
+
+  left: 60px;
+  right: 0;
+
+  bottom: 5px;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* Horizontal → */
+
+.header-guide-horizontal {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: calc(100% + 20px);
+  height: var(--guide-width);
+
+  background: var(--guide-color);
+}
+
+
+/* Vertical ↓ */
+
+.header-guide-vertical {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: var(--guide-width);
+  height: calc(100dvh - 140px);
+
+  background: var(--guide-color);
+}
+
+
+/* ==========================================
+   MAIN PAGE GRID
+========================================== */
+
+.portfolio-layout {
+  display: grid;
+
+  grid-template-columns: var(--page-grid);
+
+  padding-top: 105px;
+}
+
+
+/* ==========================================
+   FILTER NAV
+========================================== */
+
+.filter-nav {
+  grid-column: 2;
+
+  position: sticky;
+  top: 244px;
+
+  z-index: 20;
+
+  display: grid;
+
+  grid-template-columns: var(--left-grid);
+  column-gap: var(--left-gutter);
+
+  grid-template-rows: repeat(3, max-content);
+  row-gap: 30px;
+
+  align-self: start;
+  align-content: start;
+
+  width: var(--left-grid-width);
+}
+
+
+/* All */
+
+.filter:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+/* Motion & Web */
+
+.filter:nth-of-type(2) {
+  grid-column: 2 / 5;
+  grid-row: 1;
+}
+
+
+/* Editorial */
+
+.filter:nth-of-type(3) {
+  grid-column: 2 / 5;
+  grid-row: 2;
+}
+
+
+/* Identity */
+
+.filter:nth-of-type(4) {
+  grid-column: 2 / 5;
+  grid-row: 3;
+}
+
+
+/* Filter buttons */
+
+.filter {
+  appearance: none;
+
+  border: 0;
+  background: transparent;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  font-size: 20px;
+  line-height: 1.1;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+.filter.active {
+  font-weight: 700;
+}
+
+
+/* ==========================================
+   SMALL LEFT FILTER ARROW
+========================================== */
+
+.filter-guide {
+  position: absolute;
+
+  left: -40px;
+  right: 0;
+
+  top: -5px;
+
+  height: 180px;
+
+  border-left:
+    var(--guide-width)
+    solid
+    var(--guide-color);
+
+  border-bottom:
+    var(--guide-width)
+    solid
+    var(--guide-color);
+
+  pointer-events: none;
+}
+
+
+/* ↑ */
+
+.filter-guide-vertical {
+  position: absolute;
+
+  left: calc(var(--guide-width) * -1);
+  top: 0;
+
+  width: 0;
+  height: 0;
+}
+
+
+/* → */
+
+.filter-guide-horizontal {
+  position: absolute;
+
+  right: 0;
+  bottom: calc(var(--guide-width) * -1);
+
+  width: 0;
+  height: 0;
+}
+
+
+/* ==========================================
+   PROJECTS
+========================================== */
+
+.projects {
+  grid-column: 4;
+
+  width: 100%;
+}
+
+.project {
+  margin-bottom: 170px;
+}
+
+.project-image-wrap {
+  position: relative;
+}
+
+
+/* Project cover */
+
+.project-image {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 1.87 / 1;
+
+  overflow: hidden;
+}
+
+.project-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ==========================================
+   PROJECT ARROW
+========================================== */
+
+.project-guide {
+  position: fixed;
+
+  left: max(
+    529px,
+    calc((100vw - var(--page-width)) / 2 + 529px)
+  );
+
+  top: 199px;
+
+  width: 788px;
+  height: 473px;
+
+  pointer-events: none;
+
+  z-index: 10;
+}
+
+
+/* Horizontal → */
+
+.project-guide-horizontal {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: var(--guide-width);
+
+  background: var(--guide-color);
+}
+
+
+/* Vertical ↓ */
+
+.project-guide-vertical {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: var(--guide-width);
+  height: 100%;
+
+  background: var(--guide-color);
+}
+
+
+/* ==========================================
+   ARROW HEADS
+========================================== */
+
+.arrow-right::after,
+.arrow-down::after,
+.arrow-up::after {
+  content: "";
+
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  border-top:
+    var(--guide-width)
+    solid
+    var(--guide-color);
+
+  border-right:
+    var(--guide-width)
+    solid
+    var(--guide-color);
+}
+
+
+/* → */
+
+.arrow-right::after {
+  right: -1px;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    rotate(45deg);
+}
+
+
+/* ↓ */
+
+.arrow-down::after {
+  bottom: -1px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(135deg);
+}
+
+
+/* ↑ */
+
+.arrow-up::after {
+  top: -1px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(-45deg);
+}
+
+
+/* ==========================================
+   PROJECT TEXT
+========================================== */
+
+.project-info {
+  padding-top: 43px;
+}
+
+.project-title {
+  margin-bottom: 17px;
+
+  font-size: 32px;
+  line-height: 1;
+
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+
+/* Date + Category */
+
+.project-meta {
+  display: grid;
+
+  grid-template-columns: var(--right-grid);
+  column-gap: var(--right-gutter);
+
+  font-size: 20px;
+  line-height: 1;
+}
+
+.project-meta p:first-child {
+  grid-column: 1;
+}
+
+.project-meta p:last-child {
+  grid-column: 2;
+}
+
+
+/* ==========================================
+   HOVER
+========================================== */
+
+.top-nav a,
+.filter,
+.project-title a {
+  transition: opacity 160ms ease;
+}
+
+.top-nav a:hover,
+.filter:hover,
+.project-title a:hover {
+  opacity: 0.45;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+
+  .site {
+    padding:
+      50px
+      35px
+      90px;
+  }
+
+
+  .header {
+    position: relative;
+
+    top: auto;
+
+    z-index: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+
+  .logo {
+    font-size: 42px;
+  }
+
+
+  .top-nav {
+    display: flex;
+
+    gap: 55px;
+
+    font-size: 18px;
+  }
+
+
+  .portfolio-layout {
+    display: grid;
+
+    grid-template-columns:
+      220px
+      minmax(0, 1fr);
+
+    column-gap: 55px;
+
+    padding-top: 80px;
+  }
+
+
+  .filter-nav {
+    grid-column: 1;
+
+    position: relative;
+
+    top: auto;
+
+    z-index: auto;
+  }
+
+
+  .projects {
+    grid-column: 2;
+  }
+
+
+  .project-guide {
+    position: absolute;
+
+    left: -45px;
+    top: -45px;
+
+    width: calc(100% - 18px);
+    height: calc(100% + 42px);
+
+    z-index: auto;
+  }
+
+
+  .project-meta {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    column-gap: 30px;
+  }
+
+
+  .project-meta p:first-child {
+    grid-column: 1;
+  }
+
+
+  .project-meta p:last-child {
+    grid-column: 2;
+  }
+
+
+  .header-guide {
+    left: -15px;
+    right: -35px;
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+  .site {
+    padding:
+      30px
+      20px
+      60px;
+  }
+
+
+  .header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+
+  .logo {
+    font-size: 34px;
+  }
+
+
+  .top-nav {
+    display: flex;
+
+    gap: 22px;
+
+    font-size: 15px;
+  }
+
+
+  .portfolio-layout {
+    display: block;
+
+    padding-top: 65px;
+  }
+
+
+  .filter-nav {
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 14px 25px;
+
+    width: auto;
+
+    margin-bottom: 65px;
+  }
+
+
+  .filter {
+    font-size: 16px;
+  }
+
+
+  .filter-guide {
+    display: none;
+  }
+
+
+  .header-guide-vertical {
+    height: 260px;
+  }
+
+
+  .project {
+    margin-bottom: 100px;
+  }
+
+
+  .project-title {
+    font-size: 27px;
+  }
+
+
+  .project-meta {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    column-gap: 20px;
+
+    font-size: 16px;
+  }
+
+
+  .project-meta p:first-child {
+    grid-column: 1;
+  }
+
+
+  .project-meta p:last-child {
+    grid-column: 2;
+  }
+}
+
+
+/* ==========================================
+   PROJECT DETAIL PAGE
+   INSIDE THE MAIN PAGE
+
+   INDIVIDUAL PROJECT PAGES
+========================================== */
+
+.project-page {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+
+  padding-bottom: 40px;
+}
+
+.project-back {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 40px;
+
+  text-align: center;
+
+  font-size: 20pt;
+  font-weight: 500;
+  color: #a5a5a5;
+}
+
+.project-page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 60px;
+}
+
+.project-page-header h1 {
+  font-size: 56px;
+  line-height: 1;
+
+  font-weight: 500;
+}
+
+.project-measurements {
+  margin-top: 18px;
+
+  font-size: 20px;
+  line-height: 1.7;
+  color:#a5a5a5
+}
+
+.project-page-intro {
+  max-width: 650px;
+
+  margin-bottom: 80px;
+
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.project-heroimage {
+  width: 100vw;
+
+  margin-left: calc(50% - 50vw);
+  margin-bottom: 80px;
+
+  height: 70vh;
+
+  overflow: hidden;
+}
+
+.project-heroimage img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.project-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-gallery-video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .project-page {
+    width: calc(100% - 40px);
+
+    padding-top: 30px;
+  }
+
+  .project-back {
+    margin-bottom: 50px;
+  }
+
+  .project-page-header {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+  }
+
+  .project-page-header h1 {
+    font-size: 40px;
+  }
+
+  .project-page-intro {
+    font-size: 20px;
+
+    margin-bottom: 50px;
+  }
+
+  .project-gallery {
+    gap: 20px;
+  }
+
+}

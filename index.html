@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Yujung Jang Portfolio</title>
+
+  <!-- Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/yzr5afl.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <div class="site">
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="header">
+
+      <!-- Large top / left arrow -->
+      <div class="header-guide" aria-hidden="true">
+        <span class="header-guide-horizontal arrow-right"></span>
+        <span class="header-guide-vertical arrow-down"></span>
+      </div>
+
+
+      <a href="index.html" class="logo">
+        Yujung Jang
+      </a>
+
+
+      <nav class="top-nav">
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#">
+          Resume
+        </a>
+
+      </nav>
+
+    </header>
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="portfolio-layout">
+
+
+      <!-- =====================================
+           FILTER NAV
+      ====================================== -->
+
+      <aside class="filter-nav">
+
+        <!-- Small left arrow -->
+        <div class="filter-guide" aria-hidden="true">
+          <span class="filter-guide-vertical arrow-up"></span>
+          <span class="filter-guide-horizontal arrow-right"></span>
+        </div>
+
+
+        <button
+          class="filter active"
+          data-filter="all"
+          type="button"
+        >
+          All
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="Motion & Web"
+          type="button"
+        >
+          Motion &amp; Web
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="Editorial"
+          type="button"
+        >
+          Editorial
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="Identity"
+          type="button"
+        >
+          Identity
+        </button>
+
+      </aside>
+
+
+      <!-- =====================================
+           PROJECTS
+
+           projects.js automatically inserts
+           all project cards inside here.
+      ====================================== -->
+
+      <section class="projects">
+      </section>
+
+
+    </main>
+
+  </div>
+
+
+  <!-- Project data + homepage renderer -->
+  <script src="projects.js"></script>
+
+</body>
+
+</html>
