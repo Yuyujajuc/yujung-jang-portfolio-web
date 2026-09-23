@@ -21,7 +21,10 @@ const projects = [
     measurements: `13" x 9", 9 pages, accordion book, 2026`,
 
     description:
-      "This identity system was added to various directories, maps and other graphics. I was inspired by the colors and overlay aesthetics of masking tape, one of many art supplies RISD students use the most.",
+      `This identity system was added to various directories, 
+      maps and other graphics. I was inspired by the colors and 
+      overlay aesthetics of masking tape, one of many art supplies 
+      RISD students use the most.`,
 
     /* Large image at top of project page */
     hero: { type: "image", src: "images/risd-sign-system/all-in-gray.jpg" },
@@ -45,7 +48,19 @@ const projects = [
 
     measurements: "1'55'', motion graphic animation, 2025",
 
-    description: "This is a lyric video of Pink Floyd's song \"Comfortably Numb\". Some words in the lyrics are replaced by important symbols in the animation. For example, the word \"you\" is replaced by a dark butterfly and \"I\" is replaced by a T-pin. \"I\" and the pin has a graphic relation, and \"I\" and \"you\" have a narrative relation; a contradiction. I was inspired by butterfly taxidermy in RISD's Nature Lab. I associate the process of a caterpillar metamorphosing into a butterfly to a creative process. A caterpillar builds a cocoon and crawls in while, inside the private room, its organs and biological structures completely transforms. When it is ready it breaks the cozy cocoon to reveal itself to the scary, vast nature. I used metamorphosis as a metaphor for a small thought or a line in a sketchbook turning into a big project. A creative process almost always comes with frustration. I associate the sense of stagnation and anxiety caused from approaching deadlines with the displayed butterflies and caterpillars in the taxidermy box. ",
+    description: `This is a lyric video of Pink Floyd's song \"Comfortably Numb\". 
+    Some words in the lyrics are replaced by important symbols in the animation. 
+    For example, the word \"you\" is replaced by a dark butterfly and \"I\" 
+    is replaced by a T-pin. \"I\" and the pin has a graphic relation, and \"I\"
+    and \"you\" have a narrative relation; a contradiction. I was inspired by 
+    butterfly taxidermy in RISD's Nature Lab. I associate the process of a caterpillar 
+    metamorphosing into a butterfly to a creative process. A caterpillar builds a cocoon 
+    and crawls in while, inside the private room, its organs and biological structures 
+    completely transforms. When it is ready it breaks the cozy cocoon to reveal itself 
+    to the scary, vast nature. I used metamorphosis as a metaphor for a small thought or 
+    a line in a sketchbook turning into a big project. A creative process almost always 
+    comes with frustration. I associate the sense of stagnation and anxiety caused from 
+    approaching deadlines with the displayed butterflies and caterpillars in the taxidermy box.`,
 
     hero: { type: "image", src: "images/comfortably-numb/butt-lett.jpg" },
 
@@ -93,7 +108,11 @@ const projects = [
 
     measurements: "9\" x 12\", Magazine, 2025",
 
-    description: "I made a magazine based on educational Youtuber Kurzgesagt's video, \"Can You Upload Your Mind And Live Forever?\" There are fold out pages at the end of each chapter, depicting the vast scale of knowledge and the universe. The magazine making process was simple. I watched Kurzgesact's video, digested the contents, and made pages based on the visual language I wanted the magazine to have.",
+    description: `I made a magazine based on educational Youtuber Kurzgesagt's video, 
+    "Can You Upload Your Mind And Live Forever?" There are fold out pages at the end 
+    of each chapter, depicting the vast scale of knowledge and the universe. The magazine 
+    making process was simple. I watched Kurzgesact's video, digested the contents, 
+    and made pages based on the visual language I wanted the magazine to have.`,
 
     hero: { type: "image", src: "images/mind-uploading-magazine/covers-spread.jpg" },
 
