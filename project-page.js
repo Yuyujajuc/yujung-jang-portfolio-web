@@ -63,11 +63,41 @@ else {
      HERO IMAGE
   ======================================== */
 
-  const heroImage =
-    document.querySelector("#project-hero");
+  const heroContainer =
+  document.querySelector("#project-hero");
 
-  heroImage.src = project.hero;
-  heroImage.alt = project.title;
+
+if (project.hero.type === "video") {
+
+  heroContainer.innerHTML = `
+    <video
+      class="project-hero-media"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+    >
+      <source
+        src="${project.hero.src}"
+        type="video/mp4"
+      >
+    </video>
+  `;
+
+}
+
+else {
+
+  heroContainer.innerHTML = `
+    <img
+      class="project-hero-media"
+      src="${project.hero.src}"
+      alt="${project.title}"
+    >
+  `;
+
+}
 
 
   /* ========================================
@@ -140,16 +170,20 @@ else {
   .map((item, index) => {
 
     if (item.type === "video") {
-      return `
-        <video
-          class="project-gallery-video"
-          controls
-          playsinline
-        >
-          <source src="${item.src}" type="video/mp4">
-        </video>
-      `;
-    }
+  return `
+    <video
+      class="project-gallery-video"
+      ${item.autoplay ? "autoplay" : ""}
+      ${item.loop ? "loop" : ""}
+      ${item.muted ? "muted" : ""}
+      ${item.controls === false ? "" : "controls"}
+      playsinline
+      preload="metadata"
+    >
+      <source src="${item.src}" type="video/mp4">
+    </video>
+  `;
+}
 
     return `
       <img
