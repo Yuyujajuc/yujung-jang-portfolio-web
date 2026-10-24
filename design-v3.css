@@ -1,0 +1,92 @@
+/* Main 3 (287:28) / About 3 (287:60). Native HTML; project data unchanged. */
+.home-page { --content-left: calc(25vw + 41px); }
+.home-page .site { padding: 36px 60px 60px var(--content-left); }
+.home-page .header { left: 60px; top: 35px; width: 300px; pointer-events: none; }
+.home-page .header a, .home-page .header button { pointer-events: auto; }
+.home-page .logo { position: static; font-size: 52px; line-height: 1.265; }
+.home-page .top-nav { position: static; display: block; font-size: 20px; }
+.home-page .email-contact { position: absolute; top: 74px; left: 0; }
+.home-page .copy-email { left: 60px; top: 4px; }
+.home-page .email-address { top: 28px; }
+.home-page .information-links a { position: fixed; line-height: 1.48; }
+.home-page [data-nav="resume"] { left: calc(100vw / 12 + 53px); top: 202px; }
+.home-page [data-nav="about"] { left: calc(100vw / 6 + 47px); top: 271px; }
+.about-page [data-nav="linkedin"] { position: absolute; left: var(--content-left); top: 340px; font-size: 20px; line-height: 1.48; }
+.about-page [data-nav="linkedin"]:hover, .about-page [data-nav="linkedin"]:focus-visible { font-weight: 900; }
+.home-page .filter-nav { left: 60px; top: 480px; }
+.home-page .filter { line-height: 29.6px; }
+.home-page .filter:first-of-type { line-height: 29.6px; margin-bottom: 37.4px; }
+.home-page .project-image { aspect-ratio: 3 / 2; }
+.home-page .project-info { height: 251px; padding: 155px 113px 31px; background-image: url('images/interface/main3-gradient.svg'); }
+.home-page .project-meta { margin-top: 8.58px; gap: 42px; }
+.home-page .project-meta p:first-child { min-width: 72px; }
+.about-page .site { padding: 0; min-height: 1555px; }
+.about-main { margin: 0; width: 100%; padding: 261px 0 0; z-index: 1; }
+.about-interests { margin-left: calc(100vw * 5 / 12 + 28px); width: min(656px, calc(100% - (100vw * 5 / 12 + 88px))); min-height: 225px; height: auto; }
+.about-biography { margin: 60px 0 0 var(--content-left); width: 639px; max-width: calc(100% - var(--content-left) - 60px); }
+.about-biography p + p { margin-top: 42px; }
+.about-biography p:nth-child(3) { margin-top: 52px; }
+.about-hobbies { margin: 70px 60px 0 calc(100vw / 3 + 34px); width: auto; }
+.site-colophon { position: absolute; top: 1443px; left: calc(100vw / 6 + 47px); color: rgb(51 48 53 / .3); font-size: 15px; font-weight: 700; line-height: 1.66; z-index: 1; }
+.about-gradient { position: absolute; left: calc(25% + 48px); right: 0; top: 0; bottom: 0; z-index: 0; pointer-events: none; overflow: hidden; container-type: size; }
+@media (max-width: 1100px) {
+ .home-page { --content-left: 300px; }
+ .home-page .site { padding-right: 30px; }
+ .home-page .header, .home-page .filter-nav { left: 30px; }
+ .home-page .logo { font-size: 40px; }
+ .home-page [data-nav="resume"] { left: 100px; }
+ .home-page [data-nav="about"] { left: 200px; }
+ .home-page .project-info { padding-left: 30px; padding-right: 30px; }
+ .about-page .site { padding: 0 30px 60px 300px; }
+ .about-main { padding-top: 420px; }
+ .about-interests, .about-biography, .about-hobbies { margin-left: 0; margin-right: 0; width: auto; max-width: none; min-height: 0; height: auto; }
+ .site-colophon { position: relative; top: auto; left: auto; margin-top: 65px; }
+}
+@media (max-width: 700px) {
+ .home-page .site, .about-page .site { padding: 24px 20px 50px; }
+ .home-page .header { position: relative; top: auto; left: auto; width: auto; min-height: 210px; margin: 0; }
+ .home-page .logo { font-size: 38px; }
+ .home-page .email-contact { top: 65px; }
+ .home-page .information-links { position: absolute; top: 150px; left: 0; flex-direction: row; gap: 24px; }
+ .home-page .information-links a { position: static; }
+ .home-page .filter-nav { position: sticky; top: 0; left: auto; margin: 0 0 24px; }
+ .home-page .filter, .home-page .filter:first-of-type { line-height: 32px; margin: 0; }
+ .home-page .project-info { height: auto; padding: 16px 0 0; background: none; }
+ .home-page .projects { gap: 48px; }
+ .about-main { padding: 20px 0 0; }
+ .about-interests, .about-hobbies { font-size: 21px; }
+ .about-biography { font-size: 18px; }
+ .about-gradient { left: 0; }
+}
+
+/* Keep the exported gradient rotated as in About 3. */
+.about-gradient::before { content: ""; position: absolute; width: 100cqh; height: 100cqw; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-90deg); background: url('images/interface/about3-gradient.svg') center / 100% 100% no-repeat; }
+.home-page .project-info { height: auto; min-height: 251px; padding-top: 155px; }
+.about-page .site { padding-bottom: 63px; }
+.site-colophon { position: relative; top: auto; margin-top: 61px; }
+@media (min-width: 701px) and (max-width: 1100px) {
+ .home-page .project-info { min-height: 180px; padding-top: 65px; padding-bottom: 20px; }
+ .about-page [data-nav="linkedin"] { left: 0; }
+}
+@media (max-width: 700px) {
+ .about-page .header, .about-page .filter-nav { margin-right: 0; }
+ .home-page .project-info { min-height: 0; padding-top: 16px; }
+ .home-page .project-meta { gap: 20px; }
+ .site-colophon { left: auto; }
+}
+@media (hover: none) and (min-width: 701px) {
+ .home-page .project-info { position: static; opacity: 1; pointer-events: auto; min-height: 0; padding: 16px 0 0; background: none; }
+}
+@media (min-width: 701px) and (max-height: 760px) {
+ .home-page .filter-nav { top: 410px; max-height: calc(100dvh - 420px); overflow-y: auto; }
+}
+
+/* Keep About navigation in place while LinkedIn travels with the content. */
+@media (max-width: 700px) {
+ .about-page .site { padding-top: 350px; }
+ .about-page .header { position: fixed; top: 0; left: 0; right: 0; min-height: 234px; padding: 24px 20px; background: #faf9f8; }
+ .about-page .email-contact { top: 89px; left: 20px; }
+ .about-page .information-links { top: 174px; left: 20px; }
+ .about-page .filter-nav { position: fixed; top: 234px; left: 0; right: 0; padding: 12px 20px; margin: 0; }
+ .about-page [data-nav="linkedin"] { position: static; display: inline-block; margin-bottom: 24px; }
+}
