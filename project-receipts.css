@@ -1,0 +1,16 @@
+/* Overlays do not participate in block spacing or alter existing project media. */
+.has-receipts { position: relative; }
+.project-receipts {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  overflow: hidden;
+  pointer-events: none;
+}
+.project-receipts img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  height: auto;
+  transform-origin: top left;
+}

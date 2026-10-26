@@ -5,17 +5,35 @@
    this is the main section you will change.
 ========================================== */
 
+// Optional per-project view overrides (missing fields use the main project data):
+// views: {
+//   list: { title: "Long title", secondaryCategory: "Poster", cover: { type: "image", src: "images/project/list.jpg" } },
+//   grid: { title: "Short title", category: "Publication", secondaryCategory: "Magazine", cover: { type: "image", src: "images/project/grid.jpg" } }
+// }
+// Display categories do not change category filtering or project detail pages.
 const projects = [
 
 
   {
     id: "comfortably-numb",
+    views: { grid: { title: "Comfortably Numb", secondaryCategory: "Lyric video" } 
+          
+  
+  },
 
     title: "Comfortably Numb Lyric Video",
     date: "2025",
     category: "Motion + Web",
 
-    cover: { type: "image", src: "images/comfortably-numb/cover.jpg" },
+    cover: {
+        type: "video",
+        src: "videos/comfortably-numb/cover.mp4",
+
+        autoplay: true,
+        loop: true,
+        muted: true,
+        controls: false
+      },
 
     measurements: "1'55'', motion graphic animation, 2025",
 
@@ -24,7 +42,9 @@ const projects = [
     For example, the word \"you\" is replaced by a dark butterfly and \"I\" 
     is replaced by a T-pin. \"I\" and the pin has a graphic relation, and \"I\"
     and \"you\" have a narrative relation; a contradiction. I was inspired by 
-    butterfly taxidermy in RISD's Nature Lab. I associate the process of a caterpillar 
+    butterfly taxidermy in RISD's Nature Lab. 
+    
+    \n I associate the process of a caterpillar 
     metamorphosing into a butterfly to a creative process. A caterpillar builds a cocoon 
     and crawls in while, inside the private room, its organs and biological structures 
     completely transforms. When it is ready it breaks the cozy cocoon to reveal itself 
@@ -33,34 +53,138 @@ const projects = [
     comes with frustration. I associate the sense of stagnation and anxiety caused from 
     approaching deadlines with the displayed butterflies and caterpillars in the taxidermy box.`,
 
-    hero: { type: "image", src: "images/comfortably-numb/butt-lett.jpg" },
+
+    page: {
+  
+
+  hero: {
+    type: "image",
+    src: "images/comfortably-numb/hero.jpg",
+    fit: "cover"
+  },
+  
+  blocks: [
+  {
+    type: "big",
+    margin: "0-column",
+    media: {
+      type: "video",
+      src: "videos/comfortably-numb/full-vid.mp4",
+      controls: true,
+      fit: "contain",
+      poster: "images/comfortably-numb/poster.jpg",
+    }
+  },
+  {
+    type: "big",
+    margin: "0-column",
+    media: {
+      type: "video",
+      src: "videos/comfortably-numb/nose-blood.mp4",
+      controls: false,
+      fit: "contain",
+      autoplay: true
+    }
+  },
+  {
+    type: "big",
+    margin: "0-column",
+    media: {
+      type: "video",
+      src: "videos/comfortably-numb/cover.mp4",
+      controls: false,
+      fit: "contain",
+      autoplay: true
+    }
+  },
+  {
+    type: "big",
+    margin: "0-column",
+    media: {
+      type: "video",
+      src: "videos/comfortably-numb/horizon.mp4",
+      controls: false,
+      fit: "contain",
+      autoplay: true
+    }
+  },
+    
+  ]
+}},
+
+  {
+    id: "risd-sign-system",
+    views: {
+     grid: { 
+      cover: { type: "image", src: "images/risd-sign-system/grid-cover.jpg" } },
+           },
+
+    title: "RISD Sign System",
+    date: "2026",
+    category: "Identity",
+
+    cover: { type: "image", src: "images/risd-sign-system/cover.jpg" },
+
+    measurements: `13" x 9", 9 pages, accordion book, 2026`,
+
+    description:
+      `This identity system was added to various directories, 
+      maps and other graphics. I was inspired by the colors and 
+      overlay aesthetics of masking tape, one of many art supplies 
+      RISD students use the most.`,
 
     gallery: [
-      { type: "video", src: "videos/comfortably-numb/full-vid.mp4" },
-      {
-        type: "video",
-        src: "videos/comfortably-numb/nose-blood.mp4",
+      { type: "image", src: "images/risd-sign-system/door-map.jpg" },
+      { type: "image", src: "images/risd-sign-system/direction.jpg" },
+      { type: "image", src: "images/risd-sign-system/elevator.jpg" },
+    ],
 
-        autoplay: true,
-        loop: true,
-        muted: true,
-        controls: false
-      },
-      
-      {
-        type: "video",
-        src: "videos/comfortably-numb/horizon.mp4",
+page: {
+  
 
-        autoplay: true,
-        loop: true,
-        muted: true,
-        controls: false
-      }
-    ]
+  hero: {
+    type: "image",
+    src: "images/risd-sign-system/hero.jpg",
+    fit: "cover"
   },
+  
+  blocks: [
+
+    {
+          type: "equal-grid", margin: "full-bleed", columns: 1, gutter: 0,
+          items: [
+            { type: "image",
+              src: "images/risd-sign-system/door-map.jpg",
+              alt: "risd sign system",
+              fit: "contain" },
+
+            { type: "image",
+              src: "images/risd-sign-system/direction.jpg",
+              alt: "risd sign system",
+              fit: "contain" },
+
+            { type: "image",
+              src: "images/risd-sign-system/elevator.jpg",
+              alt: "risd sign system",
+              fit: "contain" },
+            ]
+        },
+    
+  ]
+}
+
+    
+  },
+  
 
   {
     id: "bluetooth",
+    views: {
+     grid: { 
+      category: "Publication", 
+      secondaryCategory: "Accordion Book", 
+      cover: { type: "image", src: "images/bluetooth/grid-cover.jpg" } },
+           },
 
     title: "Bluetooth LE Principles",
     date: "2026",
@@ -80,15 +204,37 @@ const projects = [
       the actual protocol stack on both devices. As the reader proceeds to the right, 
       the explanation goes more figurative, metaphorical and detailed.`,
 
-    hero: { type: "image", src: "images/bluetooth/hero.jpg" },
+page: {
+  
 
-    gallery: [
-      { type: "image", src: "images/bluetooth/one-strip.jpg" },
-    ]
+  hero: {
+    type: "image",
+    src: "images/bluetooth/hero.jpg",
+    fit: "contain"
   },
 
-  {
+  blocks: [
+    {
+      type: "big",
+      margin: "1-column",
+      media: {
+        type: "image",
+        src: "images/bluetooth/one-strip.jpg",
+        alt: "Bluetooth LE Principles",
+        fit: "contain"
+      }
+    }
+  ]
+} },
+
+   {
     id: "mind-uploading-magazine",
+    views: { 
+      grid: { 
+        title: "Mind Uploading", 
+        category: "Publication", 
+        secondaryCategory: "Magazine",
+        cover: { type: "image", src: "images/mind-uploading-magazine/grid-cover.jpg" }} },
 
     title: "Mind Uploading Magazine",
     date: "2025",
@@ -104,25 +250,422 @@ const projects = [
     making process was simple. I watched Kurzgesact's video, digested the contents, 
     and made pages based on the visual language I wanted the magazine to have.`,
 
-    hero: { type: "image", src: "images/mind-uploading-magazine/covers-spread.jpg" },
+    page: {
+      
+      hero: {
+        type: "image",
+        src: "images/mind-uploading-magazine/hero.jpg",
+        alt: "mind uploading magazine",
+        fit: "contain"
+},
+      blocks: [
+        {
+          type: "equal-grid",
+          margin: "0-column",
+          columns: 3,
+          mobileColumns: 2,
+          gutter: 5,
+          caption: "Spreads",
 
-    gallery: [
-      { type: "image", src: "images/mind-uploading-magazine/2-3.jpg" },
-      { type: "image", src: "images/mind-uploading-magazine/6-7.jpg" },
-      { type: "image", src: "images/mind-uploading-magazine/10-11.jpg" },
-      { type: "image", src: "images/mind-uploading-magazine/12-13.jpg" },
-      { type: "image", src: "images/mind-uploading-magazine/16-17.jpg" },
-      { type: "image", src: "images/mind-uploading-magazine/22-23.jpg" },
-      { type: "image", src: "images/mind-uploading-magazine/26-27.jpg" },
-      { type: "image", src: "images/mind-uploading-magazine/maze-spread.jpg" },
-      { type: "image", src: "images/mind-uploading-magazine/nebula.jpg" },
-      { type: "image", src: "images/mind-uploading-magazine/size-comparison.jpg" },
-    ]
+          items: [
+            2, 3, 5, 6,
+            7, 8, 9, 10, 11,
+            12, 13, 14,
+          ].map(n => ({
+            type: "image",
+            src: `images/mind-uploading-magazine/spreads/${n}.jpg`,
+            alt: `Mind Uploading spread ${n}`,
+            fit: "contain"
+          }))
+        },
+        {
+          type: "equal-grid", margin: "full-bleed", columns: 1, gutter: 0,
+          caption: "Size comparison", 
+          items: [
+            { type: "image",
+              src: "images/mind-uploading-magazine/covers-spread.jpg",
+              alt: "mind uploading magazine",
+              fit: "contain" },
+
+            { type: "image",
+              src: "images/mind-uploading-magazine/2-3.jpg",
+              alt: "mind uploading magazine",
+              fit: "contain" },
+
+            { type: "image",
+              src: "images/mind-uploading-magazine/10-11.jpg",
+              alt: "mind uploading magazine",
+              fit: "contain" },
+
+            { type: "image",
+              src: "images/mind-uploading-magazine/12-13.jpg",
+              alt: "Mind Uploading magazine",
+              fit: "contain" },
+
+              { type: "image",
+              src: "images/mind-uploading-magazine/maze-spread.jpg",
+              alt: "Mind Uploading magazine",
+              fit: "contain" },
+
+              { type: "image",
+              src: "images/mind-uploading-magazine/size-comparison.jpg",
+              alt: "Mind Uploading magazine",
+              fit: "contain" },
+          ]
+        },
+
+      ]
+    },
+  },
+
+  {
+    id: "safet",
+    title: "Safe-T: Sequential, Advised, Familiarized Exposure Therapy",
+    date: "2026",
+    category: "Identity",
+    cover: { type: "video", src: "videos/safet/cover.mp4" },
+
+    views: { 
+      grid: { 
+        title: "Safe-T", secondaryCategory: "Campaign, Motion, Identity",
+        cover: { type: "video", src: "videos/safet/grid-cover.mp4" }
+      } 
+    },
+      cover: {
+        type: "video",
+        src: "videos/safet/cover.mp4",
+
+        autoplay: true,
+        loop: true,
+        muted: true,
+        controls: false
+      },
+    
+      title: "Safe-T: Sequential, Advised, Familiarized Exposure Therapy",
+    date: "2026",
+    category: "Identity",
+
+    measurements: "Campaign, Identity, Motion, 2026",
+
+    description: `A campaign for Project REACH, a research initiative led by Dr. Hannah Frank, 
+    an Assistant Professor of the Department of Psychiatry and Human Behavior at Brown University. 
+    REACH aims to increase access to exposure therapy for people with and parents of children who 
+    have anxiety, OCD, and other related disorders. Sate-T was a group project; the teammates were
+    Yujung Jang, Rachel Chen, and Koji Hellman.
+`,
+
+    page: {
+      
+      hero: {
+        type: "image",
+        src: "images/safet/hero.jpg",
+        alt: "Safe-T campaign overview",
+        fit: "contain"
+},
+      blocks: [
+        {
+          type: "equal-grid", margin: "1-column", columns: 3, gutter: 20,
+          aspectRatio: "348 / 458",
+          caption: "Worksheets by Koji Hellman",
+          items: [
+            { type: "image",
+              src: "images/safet/explainersheet.jpg",
+              alt: "Safe-T campaign",
+              fit: "contain" },
+
+            { type: "image",
+              src: "images/safet/ws-fear-hierarchy.jpg",
+              alt: "Safe-T campaign",
+              fit: "contain" },
+
+            { type: "image",
+              src: "images/safet/ws-gradedexposure.jpg",
+              alt: "Safe-T campaign",
+              fit: "contain" },
+          ]
+        },
+        { type: "big", margin: "1-column",
+          caption: "Animation directed and created by Rachel Chen,\nillustrations by Koji Hellman", 
+          media: { type: "video",
+              src: "videos/safet/explainer-video.mp4",
+              alt: "Safe-T campaign",
+              poster: "images/safet/explainer-video-poster.jpg",
+              fit: "contain" } },
+          
+        {
+          caption: "Explainer poster by Koji Hellman",
+          type: "collage", margin: "1-column", columns: 10, gutter: 42,
+          rows: [[
+            { span: 6, media: { type: "image", src: "images/safet/poster.jpg", 
+              alt: "Safe-T campaign poster explaining the therapy campaign, identity and materials", 
+              width: 7200, height: 10800 } },
+            { span: 4, gutter: 28, stack: [
+              { type: "image",
+              src: "images/safet/therapist-talk.png",
+              alt: "Safe-T campaign",
+              fit: "contain" },
+              { type: "image",
+              src: "images/safet/bed-extension.png",
+              alt: "Safe-T campaign",
+              fit: "contain" }
+            ] }
+          ]]
+        },
+        {
+          type: "equal-grid",
+          margin: "0-column",
+          columns: 5,
+          mobileColumns: 2,
+          gutter: 0,
+          aspectRatio: "264 / 204",
+          caption: "Brand guideline by Yujung Jang",
+
+          items: [
+            1, 4, 
+            6, 7, 8, 
+            9, 10, 11, 
+            12, 13, 14, 
+            15, 16, 17, 18
+          ].map(n => ({
+            type: "image",
+            src: `images/safet/style-guide-jpg/${n}.jpg`,
+            alt: `Safe-T style guide ${n}`,
+            fit: "contain"
+          }))
+        },
+
+
+        { type: "big", margin: "1-column",
+          caption: "Logo by Yujung Jang and Rachel Chen", 
+          media: { type: "video",
+        src: "videos/safet/logo-animation.mp4",
+
+        autoplay: true,
+        loop: true,
+        muted: true,
+        controls: false } }
+      ]
+    },
+    
+
+
+    
+  },
+
+  {
+    id: "thisplace-alot",
+
+    title: "This Place Is a Lot",
+    date: "2025",
+    category: "Motion + Web",
+
+    cover: { type: "image", src: "images/thisplace-alot/cover.png" },
+
+    measurements: "1'55'', motion graphic animation, 2025",
+
+    description: `This Place Is A Lot looks at the irony of non-vehicular interactions that 
+    occur in a space designed for vehicles. We want to view the Metropark parking 
+    lot as a site for more than what it is intended for. We observed traffic in ways 
+    unrelated to cars: animals, pedestrians, flora, and light patterns. It was 
+    interesting to view an unextraordinary space like a parking lot as one filled 
+    with much more life than initially observed.
+
+    \n This display is a mockup of a web experience intended to guide the viewer through 
+    an abstracted space, "the place" later understood as a parking lot. On this journey, 
+    the user encounters a range of residents and passersby of the place, prompted to click 
+    on each and obtain data on their whereabouts, personalities, and movement.`,
+
+    page: {
+      hero: {
+        type: "image",
+        src: "images/thisplace-alot/hero.jpg",
+        alt: "This Place Is a Lot hero",
+        fit: "contain"
+},
+
+    blocks: [
+
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "left",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/animation.gif",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "center",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/2.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "right",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/3.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "center",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/4.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+
+      {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "left",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/5.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "center",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/6.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "right",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/7.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "center",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/8.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "left",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/9.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "center",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/10.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+    {
+      type: "midsize",
+      span: 8,
+      gapAfter: 14,
+      align: "right",
+      margin: "0-column",
+      media: {
+        type: "image",
+        src: "images/thisplace-alot/11.jpg",
+        alt: "This Place Is a Lot",
+        fit: "contain",
+      }
+    },
+
+    {
+          type: "equal-grid", margin: "2 columns", columns: 2, gutter: 14,
+          items: [
+            { type: "image",
+              src: "images/thisplace-alot/strip-bright.jpg",
+              alt: "This Place Is a Lot",
+              fit: "contain" },
+
+            { type: "image",
+              src: "images/thisplace-alot/strip-dark.jpg",
+              alt: "This Place Is a Lot",
+              fit: "contain" },
+            ]
+        },
+
+        
+    
+    
+    
+      ]
+    }
   },
 
 
   {
     id: "are-we-there-yet",
+    views: {
+      grid: {
+        title: "Are We There Yet?",
+        secondaryCategory: "Poster",
+        cover: { type: "image", src: "images/are-we-there-yet/grid-cover.jpg" }
+      }
+    },
 
     title: "Are We There Yet? My Bag is Heavy...",
     date: "2025",
@@ -137,48 +680,56 @@ const projects = [
     I drew the assets with colored pencil, edited them on Photoshop, and 
     imported them into Indesign to add captions, arrows, and other graphics.`,
 
-    hero: { type: "image", src: "images/are-we-there-yet/poster.jpg" },
+    page: {
+  
 
-    gallery: [
-      { type: "image", src: "images/are-we-there-yet/small.png" },
-      { type: "image", src: "images/are-we-there-yet/middle.png" },
-      { type: "image", src: "images/are-we-there-yet/big.png" },
-      { type: "image", src: "images/are-we-there-yet/1.jpg" },
-      { type: "image", src: "images/are-we-there-yet/2.jpg" },
-      { type: "image", src: "images/are-we-there-yet/3.jpg" },
-      { type: "image", src: "images/are-we-there-yet/4.jpg" },
-      { type: "image", src: "images/are-we-there-yet/5.jpg" },
-    ]
+  hero: {
+    type: "image",
+    src: "images/are-we-there-yet/hero.png",
+    fit: "contain"
   },
 
-  {
-    id: "risd-sign-system",
+  blocks: [
+    {
+      type: "big",
+      margin: "1-column",
+      media: {
+        type: "image",
+        src: "images/are-we-there-yet/poster.jpg",
+        alt: "Are we there yet poster",
+        fit: "contain"
+      }
+    },
+    {
+      type: "big",
+      margin: "1-column",
+      media: {
+        type: "image",
+        src: "images/are-we-there-yet/bags.png",
+        alt: "Are we there yet bags",
+        fit: "contain",
+        caption: "Bags drawings",
+      }
+    },
+        {
+          type: "equal-grid",
+          margin: "1-column",
+          columns: 5,
+          mobileColumns: 2,
+          gutter: 0,
+          caption: "Object drawings",
 
-    title: "RISD Sign System",
-    date: "2026",
-    category: "Identity",
-
-    /* Homepage thumbnail */
-    cover: { type: "image", src: "images/risd-sign-system/cover.jpg" },
-
-    /* Project page information */
-    measurements: `13" x 9", 9 pages, accordion book, 2026`,
-
-    description:
-      `This identity system was added to various directories, 
-      maps and other graphics. I was inspired by the colors and 
-      overlay aesthetics of masking tape, one of many art supplies 
-      RISD students use the most.`,
-
-    /* Large image at top of project page */
-    hero: { type: "image", src: "images/risd-sign-system/all-in-gray.jpg" },
-
-    /* Images that appear below the description */
-    gallery: [
-      { type: "image", src: "images/risd-sign-system/door-map.jpg" },
-      { type: "image", src: "images/risd-sign-system/direction.jpg" },
-      { type: "image", src: "images/risd-sign-system/elevator.jpg" },
-    ]
+          items: [
+            1, 2, 3, 4, 5
+          ].map(n => ({
+            type: "image",
+            src: `images/are-we-there-yet/${n}.jpg`,
+            alt: `Are we there yet ${n}`,
+          }))
+        }
+  ]
+} 
+  
   },
 
   {
@@ -215,6 +766,7 @@ My color and surface course assigned me one contemporary fashion designer and ma
     ]
   },
 
+  
   {
     id: "dunbar",
 
@@ -234,36 +786,6 @@ This is the website to the designer's page, introducing the font and explaining 
     gallery: [
       { type: "image", src: "images/dunbar/1.jpg" },
       { type: "image", src: "images/dunbar/2.jpg" },
-    ]
-  },
-
-  {
-    id: "thisplace-alot",
-
-    title: "This Place Is a Lot",
-    date: "2025",
-    category: "Motion + Web",
-
-    cover: { type: "image", src: "images/thisplace-alot/cover.png" },
-
-    measurements: "1'55'', motion graphic animation, 2025",
-
-    description: `This is a website featuring a parking lot Metropark Ltd: P4, Park Row West. 
-    It is located in Providence, Rhode Island, and is facing the river of providence.
-    My team researched the parking lot and created a gamified experience on web.
-    This project was research-heavy. My team visited the parking lot in different 
-    times and different occasions to collect as much as data as possible.`,
-
-    hero: { type: "image", src: "images/thisplace-alot/fastandsmall.gif" },
-
-    gallery: [
-      { type: "image", src: "images/thisplace-alot/1.jpg" },
-      { type: "image", src: "images/thisplace-alot/2.jpg" },
-      { type: "image", src: "images/thisplace-alot/3.jpg" },
-      { type: "image", src: "images/thisplace-alot/4.jpg" },
-      { type: "image", src: "images/thisplace-alot/5.jpg" },
-      { type: "image", src: "images/thisplace-alot/6.jpg" },
-      { type: "image", src: "images/thisplace-alot/7.jpg" },
     ]
   },
 
@@ -311,11 +833,22 @@ const projectsContainer = document.querySelector(".projects");
 
 
 if (projectsContainer) {
+  const home = window.PortfolioHome;
+  home.sync();
+  const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[character]));
 
   function renderProjects(projectList) {
 
+
   projectsContainer.innerHTML = projectList.length ? projectList
     .map((project, index) => {
+      const view = document.body.dataset.view === 'grid' ? 'grid' : 'list';
+      const display = { ...project, ...project.views?.[view] };
+      const title = escapeHTML(display.title);
+      const cover = { ...project.cover, ...project.views?.[view]?.cover };
+      const coverSrc = escapeHTML(cover.src);
 
       const guide = index === 0
         ? `
@@ -341,11 +874,11 @@ if (projectsContainer) {
             <a
               href="${projectLink}"
               class="project-image"
-              aria-label="View ${project.title}"
+              aria-label="View ${title}"
             >
 
               ${
-                project.cover.type === "video"
+                cover.type === "video"
 
                   ? `
                     <video
@@ -356,7 +889,7 @@ if (projectsContainer) {
                       preload="metadata"
                     >
                       <source
-                        src="${project.cover.src}"
+                        src="${coverSrc}"
                         type="video/mp4"
                       >
                     </video>
@@ -364,8 +897,8 @@ if (projectsContainer) {
 
                   : `
                     <img
-                      src="${project.cover.src}"
-                      alt="${project.title}"
+                      src="${coverSrc}"
+                      alt="${title}"
                       loading="lazy"
                       decoding="async"
                     >
@@ -381,14 +914,14 @@ if (projectsContainer) {
 
             <h2 class="project-title">
               <a href="${projectLink}">
-                ${project.title}
+                ${title}
               </a>
             </h2>
 
 
             <div class="project-meta">
-              <p>${project.date}</p>
-              <p>${project.category}</p>
+              <p>${escapeHTML(display.date)}</p>
+              <p>${escapeHTML(display.category)}${display.secondaryCategory ? `<span class="project-secondary-category">${escapeHTML(display.secondaryCategory)}</span>` : ""}</p>
             </div>
 
           </div>
@@ -400,65 +933,17 @@ if (projectsContainer) {
     .join("") : `<p class="projects-empty" role="status">Projects in this category are coming soon.</p>`;
 }
 
-renderProjects(projects);
-
-const filterButtons =
-  document.querySelectorAll(".filter");
-
-
-filterButtons.forEach((button) => {
-
-  button.addEventListener("click", () => {
-
-    /* Remove active state from every button */
-
-    filterButtons.forEach((btn) => {
-      btn.classList.remove("active");
-      btn.setAttribute("aria-pressed", "false");
-    });
-
-
-    /* Make clicked button active */
-
-    button.classList.add("active");
-    button.setAttribute("aria-pressed", "true");
-    window.scrollTo({ top: 0, behavior: "instant" });
-
-
-    /* Read category from HTML */
-
-    const selectedCategory =
-      button.dataset.filter;
-
-
-    /* ALL */
-
-    if (selectedCategory === "all") {
-      renderProjects(projects);
-      return;
-    }
-
-
-    /* Filter projects */
-
-    const filteredProjects =
-      projects.filter((project) =>
-        selectedCategory === "other"
-          ? !["Motion + Web", "Editorial", "Identity", "Infographics"].includes(project.category)
-          : project.category === selectedCategory
-      );
-
-
-    renderProjects(filteredProjects);
-
-  });
-
-});
-
+function renderSelection() {
+  const category = home.state.category;
+  const filtered = category === 'all' ? projects : projects.filter(project =>
+    category === 'other'
+      ? !['Motion + Web', 'Editorial', 'Identity', 'Infographics'].includes(project.category)
+      : project.category === category
+  );
+  renderProjects(filtered);
 }
-// About-page category links return to the corresponding filtered homepage.
-if (projectsContainer) {
-  const category = new URLSearchParams(location.search).get('category');
-  const target = [...document.querySelectorAll('.filter')].find(button => button.dataset.filter === category);
-  if (target) target.click();
+
+document.addEventListener('portfolio:homechange', renderSelection);
+renderSelection();
+home.restoreScroll(projectsContainer);
 }

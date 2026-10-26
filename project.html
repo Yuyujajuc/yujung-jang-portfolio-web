@@ -9,6 +9,9 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/yzr5afl.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project-blocks.css">
+  <link rel="stylesheet" href="project-navigation.css">
+  <link rel="stylesheet" href="project-receipts.css">
 </head>
 
 
@@ -72,26 +75,21 @@
     </section>
 
 
-    <!-- =====================================
-         BACK TO HOME
-    ====================================== -->
-
-    <a
-      class="project-back"
-      href="index.html"
-    >
-      Back to Main
-    </a>
-
-
   </main>
+
+  <!-- Shared navigation: independent of project content and block rendering. -->
+  <a class="project-home" href="index.html" aria-label="Back to homepage">
+    <img src="images/interface/to-home.svg" alt="" width="76" height="73">
+  </a>
 
 
   <!-- Project data -->
   <script src="projects.js"></script>
 
   <!-- Project page renderer -->
-  <script src="project-page.js"></script>
+  <script src="project-blocks.js?v=4"></script>
+  <script src="project-page.js?v=2"></script>
+  <script src="project-receipts.js"></script>
 
 </body>
 

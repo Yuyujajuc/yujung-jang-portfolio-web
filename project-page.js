@@ -27,22 +27,7 @@ const project = projects.find(
 
 if (!project) {
 
-  document.body.innerHTML = `
-    <main class="project-page">
-
-      <p>
-        Project not found.
-      </p>
-
-      <a
-        class="project-back"
-        href="index.html"
-      >
-        Back to Main
-      </a>
-
-    </main>
-  `;
+  document.querySelector('.project-page').innerHTML = '<p>Project not found.</p>';
 
 }
 
@@ -50,6 +35,10 @@ if (!project) {
 /* ==========================================
    IF PROJECT EXISTS
 ========================================== */
+
+else if (project.page) {
+  ProjectBlocks.render(project, document.querySelector(".project-page"));
+}
 
 else {
 
